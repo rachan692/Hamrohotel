@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .create-account-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .create-account-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .account-type-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .account-type-buttons button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #f4a300;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .account-type-buttons button:hover {
+            background-color: #f09b00;
+        }
+
+        /* Form Styles (Hidden Initially) */
+        .account-form {
+            display: none;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .account-form input[type="text"],
+        .account-form input[type="email"],
+        .account-form input[type="password"] {
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .account-form button {
+            background-color: #f4a300;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .account-form button:hover {
+            background-color: #f09b00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="create-account-section">
+        <h2>Create Your Account</h2>
+        <p>Select your account type:</p>
+        <div class="account-type-buttons">
+            <button id="touristBtn">Tourist</button>
+            <button id="homeownerBtn">Homeowner</button>
+        </div>
+
+        <!-- Form for Tourist -->
+        <div id="touristForm" class="account-form">
+            <h3>Tourist Sign Up</h3>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up as Tourist</button>
+            </form>
+        </div>
+
+        <!-- Form for Homeowner -->
+        <div id="homeownerForm" class="account-form">
+            <h3>Homeowner Sign Up</h3>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <input type="text" placeholder="Property Name" required>
+                <button type="submit">Sign Up as Homeowner</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Show appropriate form based on account type selection
+        const touristBtn = document.getElementById('touristBtn');
+        const homeownerBtn = document.getElementById('homeownerBtn');
+        const touristForm = document.getElementById('touristForm');
+        const homeownerForm = document.getElementById('homeownerForm');
+
+        touristBtn.addEventListener('click', function() {
+            touristForm.style.display = 'block';
+            homeownerForm.style.display = 'none';
+        });
+
+        homeownerBtn.addEventListener('click', function() {
+            homeownerForm.style.display = 'block';
+            touristForm.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
